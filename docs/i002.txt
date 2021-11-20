@@ -23,3 +23,5 @@ Tasks: 2, 4, 6
 
 
 RETROSPECTIVE
+Implementierungen alles geschafft, diverse Bugfixes aufgrund neuer Test Cases nötig
+LocalTime ist komplizierter als gedacht, Testcases dauern länger als gedacht
