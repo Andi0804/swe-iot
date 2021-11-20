@@ -2,7 +2,6 @@ package org.c02.iot.effect.test;
 
 import org.c02.swe.iot.IButton;
 import org.c02.swe.iot.cloud.api.ParticleException;
-import org.c02.swe.iot.effect.IEffect;
 import org.c02.swe.iot.effect.SpinningLed;
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,7 +17,7 @@ public class SpinningLedTest {
         //setup
         IButton buttonInstance = Mockito.mock(IButton.class);
 
-        IEffect poc = new SpinningLed(buttonInstance);
+        SpinningLed poc = new SpinningLed(buttonInstance);
         poc.reset();
 
         Mockito.verify(buttonInstance).allLedsOff();
@@ -29,7 +28,7 @@ public class SpinningLedTest {
     public void testOneTick() throws ParticleException {
         //setup
         IButton buttonInstance = Mockito.mock(IButton.class);
-        IEffect poc = new SpinningLed(buttonInstance);
+        SpinningLed poc = new SpinningLed(buttonInstance);
 
         Assert.assertTrue(poc.next());
 
@@ -42,7 +41,9 @@ public class SpinningLedTest {
     public void testSequenceTwoTicks() throws ParticleException {
         //setup
         IButton buttonInstance = Mockito.mock(IButton.class);
-        IEffect poc = new SpinningLed(buttonInstance);
+        SpinningLed poc = new SpinningLed(buttonInstance);
+
+        poc.init(Color.white);
 
         Assert.assertTrue(poc.next());
         Assert.assertTrue(poc.next());
@@ -59,9 +60,18 @@ public class SpinningLedTest {
     public void testSequence() throws ParticleException {
         //setup
         IButton buttonInstance = Mockito.mock(IButton.class);
-        IEffect poc = new SpinningLed(buttonInstance);
+        SpinningLed poc = new SpinningLed(buttonInstance);
+
+        poc.init(Color.white);
+
+        int counter = 0;
 
         while (poc.next()) {
+            counter++;
+            // Prevent endless run of test
+            if (counter > 24) {
+                throw new RuntimeException();
+            }
         }
 
         InOrder inOrder = Mockito.inOrder(buttonInstance);
