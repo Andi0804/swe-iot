@@ -18,10 +18,19 @@ public class LedDemoAppSpinningWheel {
 
 	public static void main(String[] args) throws IOException, ParticleException {
 
-		Button button = new Button(api);
-		button.allLedsOff();
+//		Button button = new Button(api);
+//		button.allLedsOff();
+//
+//		SpinningWheel sw = new SpinningWheel(button);
+//		sw.spin(2);
 
-		SpinningWheel sw = new SpinningWheel(button);
-		sw.spin(2);
+		while(true)
+		{
+			api.callMethod("ledMultiple", "0125500000002000000255");
+			api.callMethod("ledMultiple", "0425500000005000000255");
+			api.callMethod("ledMultiple", "0725500000008000000255");
+			api.callMethod("ledMultiple", "1025500000011000000255");
+			api.callMethod("ledsOff", null);
+		}
 	}
 }
