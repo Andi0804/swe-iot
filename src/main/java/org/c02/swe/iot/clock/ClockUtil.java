@@ -28,27 +28,34 @@ public class ClockUtil {
         int minute = date.getMinutes()/5;
         int second = date.getSeconds()/5;
 
-        Color colorMinute, colorHour, colorSecond;
+        if (hour == 0)
+            hour = 1;
+
+        if (minute == 0)
+            minute = 1;
+
+        if (second == 0)
+            second = 1;
 
         ArrayList<LedStatus> statuses = new ArrayList<LedStatus>();
 
-        colorHour = Color.red;
-        colorMinute = Color.green;
-        colorSecond = Color.blue;
+        Color colorHour = Color.red;
+        Color colorMinute = Color.green;
+        Color colorSecond = Color.blue;
 
         if (hour == minute) {
-            colorMinute = new Color(255, 255, 0);
-            colorHour = new Color(255, 255, 0);
+            colorMinute = Color.yellow;
+            colorHour = Color.yellow;
         }
 
         if (minute == second) {
-            colorMinute = new Color(0, 255, 255);
-            colorHour = new Color(0, 255, 255);
+            colorMinute = Color.cyan;
+            colorSecond =  Color.cyan;
         }
 
         if (hour == second) {
-            colorMinute = new Color(255, 0, 255);
-            colorHour = new Color(255, 0, 255);
+            colorHour = Color.magenta;
+            colorSecond = Color.magenta;
         }
 
         if (hour == minute && hour == second) {
