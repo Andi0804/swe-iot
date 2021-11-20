@@ -12,3 +12,7 @@ Tasks: 1, 2, 4
 
 TEAM 2 (Hannes, Andreas, Jasmin, Kevin, Matiou):
 Tasks: 3
+
+RETROCSPECTIVE:
+Alle Teile wurden umgesetzt
+Ein Testlauf ist noch nicht grün -> wird vom Entwicklungsteam nochmals analysiert und gefixt
