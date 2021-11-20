@@ -1,4 +1,4 @@
-SPRINT PLANNING - ITERATION TWO - EPIC 4
+SPRINT PLANNING - ITERATION THREE - EPIC 4
 
 Tasks DONE
 	1. 	Bugfixes für die TestCases
@@ -31,3 +31,6 @@ TestCases waren nicht richtig -> Richtigstellung durch Tester
 
 
 RETROSPECTIVE
+Sprint war sehr knapp, es sind aber alle Tasks gemacht worden
+Keine Anpassungen mehr nötig - Release ready!
+Scrum Master hat Internetprobleme - Burn Down Chart hat sich verzögert
