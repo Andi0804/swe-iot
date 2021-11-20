@@ -18,6 +18,9 @@ public class SpinningLed extends AbstractEffect {
         if (countSpins < 1)
             throw new IllegalStateException();
 
+        if (color == null)
+            throw new IllegalStateException();
+
         reset();
         this.color = color;
         for (int i = 1; i <= countSpins; i++) {

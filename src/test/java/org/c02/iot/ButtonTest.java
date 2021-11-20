@@ -85,8 +85,8 @@ public class ButtonTest {
         IParticleApi api = Mockito.mock(IParticleApi.class);
 
         ArrayList<LedStatus> ledStatuses = new ArrayList<>();
-        ledStatuses.add(new LedStatus(1, Color.red));
-        ledStatuses.add(new LedStatus(2, Color.blue));
+        ledStatuses.add(new LedStatus(1, Color.blue));
+        ledStatuses.add(new LedStatus(2, Color.red));
 
         Button testButton = new Button(api);
 
@@ -94,6 +94,7 @@ public class ButtonTest {
 
         verify(api).callMethod("led", "01000000255");
         verify(api).callMethod("led", "02255000000");
+
     }
 
     @Test(expected = IllegalArgumentException.class)
