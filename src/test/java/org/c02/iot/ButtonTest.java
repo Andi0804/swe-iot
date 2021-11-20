@@ -94,7 +94,6 @@ public class ButtonTest {
 
         verify(api).callMethod("led", "01000000255");
         verify(api).callMethod("led", "02255000000");
-
     }
 
     @Test(expected = IllegalArgumentException.class)

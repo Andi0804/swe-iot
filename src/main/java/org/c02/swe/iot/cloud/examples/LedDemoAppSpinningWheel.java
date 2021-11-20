@@ -21,19 +21,6 @@ public class LedDemoAppSpinningWheel {
 		Button button = new Button(api);
 		button.allLedsOff();
 
-		/*button.allLedsOff();
-
-		for (int i = 1; i <= 12 ; i++) {
-			button.setLed(i, Color.blue);
-		}*/
-
-		//SpinningLed sl = new SpinningLed(button);
-		//sl.spin(2, Color.red);
-
-
-//		button.setLed(new LedStatus(3, Color.red));
-//		button.setLed(new LedStatus(7, Color.white));
-
 		SpinningWheel sw = new SpinningWheel(button);
 		sw.spin(2);
 	}
