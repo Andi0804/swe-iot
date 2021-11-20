@@ -18,13 +18,29 @@ public class LedDemoClock {
 
     static IParticleApi api = new ParticleApi(new ButtonConnection());
 
-    public static void main(String[] args) throws IOException, ParticleException {
+    public static void main(String[] args) throws IOException, ParticleException, InterruptedException {
 
         Button button = new Button(api);
         button.allLedsOff();
 
-        Date myDate = new Date();
+		/*button.allLedsOff();
+
+		for (int i = 1; i <= 12 ; i++) {
+			button.setLed(i, Color.blue);
+		}*/
+
+        //SpinningLed sl = new SpinningLed(button);
+        //sl.spin(2, Color.red);
+
+
+//		button.setLed(new LedStatus(3, Color.red));
+//		button.setLed(new LedStatus(7, Color.white));
+
         ClockUtil clock = new ClockUtil(button);
-        clock.show(myDate);
+        for (int i = 0; i < 100; i++) {
+            Thread.sleep(5000);
+            Date myDate = new Date();
+            clock.show(myDate);
+        }
     }
 }
