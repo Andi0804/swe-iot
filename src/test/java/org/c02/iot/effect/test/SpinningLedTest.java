@@ -9,6 +9,8 @@ import org.mockito.Mockito;
 
 import java.awt.*;
 
+import static org.mockito.Mockito.*;
+
 public class SpinningLedTest {
 
     @Test
@@ -19,8 +21,8 @@ public class SpinningLedTest {
         SpinningLed poc = new SpinningLed(buttonInstance);
         poc.reset();
 
-        Mockito.verify(buttonInstance).allLedsOff();
-        Mockito.verifyNoMoreInteractions(buttonInstance);
+        verify(buttonInstance).allLedsOff();
+        verifyNoMoreInteractions(buttonInstance);
     }
 
     @Test
@@ -61,5 +63,18 @@ public class SpinningLedTest {
 
         inOrder.verify(buttonInstance).allLedsOff();
         inOrder.verifyNoMoreInteractions();
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testNegativeSpins() throws ParticleException {
+
+        IButton buttonInstance = Mockito.mock(IButton.class);
+        SpinningLed poc = new SpinningLed(buttonInstance);
+
+        int spins = -2;
+
+        poc.spin(spins, Color.red);
+
+        verifyNoInteractions(buttonInstance);
     }
 }
