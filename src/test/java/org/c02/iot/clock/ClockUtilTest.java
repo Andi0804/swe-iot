@@ -6,13 +6,14 @@ import org.c02.swe.iot.cloud.api.ParticleException;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import java.awt.*;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 
@@ -28,9 +29,8 @@ public class ClockUtilTest {
                 atZone(ZoneId.systemDefault()).toInstant();
         clock.show(Date.from(time));
 
-        verify(buttonInstance).setLed(3, Color.red);
-        verify(buttonInstance).setLed(1, Color.green);
-        verify(buttonInstance).setLed(45 / 5, Color.blue);
+        verify(buttonInstance).allLedsOff();
+        verify(buttonInstance).setLeds(any(ArrayList.class));
 
         verifyNoMoreInteractions(buttonInstance);
     }
