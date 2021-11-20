@@ -28,8 +28,7 @@ public class ClockUtilTest {
         Instant time = LocalTime.of(3, 5, 45).atDate(LocalDate.of(2020, 1, 1)).
                 atZone(ZoneId.systemDefault()).toInstant();
         clock.show(Date.from(time));
-
-        verify(buttonInstance).allLedsOff();
+        
         verify(buttonInstance).setLeds(any(ArrayList.class));
 
         verifyNoMoreInteractions(buttonInstance);
