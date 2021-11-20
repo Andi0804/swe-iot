@@ -29,8 +29,8 @@ public class ClockUtilTest {
         clock.show(Date.from(time));
 
         verify(buttonInstance).setLed(3, Color.red);
-        verify(buttonInstance).setLed(5, Color.green);
-        verify(buttonInstance).setLed(5, Color.blue);
+        verify(buttonInstance).setLed(1, Color.green);
+        verify(buttonInstance).setLed(45 / 5, Color.blue);
 
         verifyNoMoreInteractions(buttonInstance);
     }
