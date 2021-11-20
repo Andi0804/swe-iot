@@ -22,6 +22,8 @@ public class ClockUtil {
 
     public void show(Date date) throws ParticleException {
 
+        button.allLedsOff();
+
         int hour = date.getHours()%12;
         int minute = date.getMinutes()/5;
         int second = date.getSeconds()/5;

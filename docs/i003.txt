@@ -25,5 +25,9 @@ DAILY SCRUM
 Fehler besprochen die von den Testern angemerkt wurden
 Unit Tests noch nicht ganz fertig
 
+DAILY SCRUM 2
+Letzter Bugfix für die ClockUtil ist noch zu machen
+TestCases waren nicht richtig -> Richtigstellung durch Tester
+
 
 RETROSPECTIVE

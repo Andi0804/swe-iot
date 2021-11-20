@@ -1,4 +1,4 @@
-SPRINT PLANNING - ITERATION ZERO
+SPRINT PLANNING - ITERATION ZERO - EPIC 1
 
 Tasks TODO
 	1. 	Implementieren Sie die Methoden zum Setzen der Leds (setLed) [7]

@@ -25,7 +25,7 @@ public class LedDemoClock {
 
         ClockUtil clock = new ClockUtil(button);
         for (int i = 0; i < 100; i++) {
-            Thread.sleep(200);
+            Thread.sleep(1000);
             Date myDate = new Date();
             clock.show(myDate);
         }

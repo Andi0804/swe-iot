@@ -1,4 +1,4 @@
-SPRINT PLANNING - ITERATION One
+SPRINT PLANNING - ITERATION ONE - EPIC 2
 
 Tasks DONE
 	1. 	Implementieren Sie die Methoden zum Setzen der Leds (setLed)
