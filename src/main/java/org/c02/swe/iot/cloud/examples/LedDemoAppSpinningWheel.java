@@ -35,6 +35,6 @@ public class LedDemoAppSpinningWheel {
 //		button.setLed(new LedStatus(7, Color.white));
 
 		SpinningWheel sw = new SpinningWheel(button);
-		sw.spin();
+		sw.spin(2);
 	}
 }
