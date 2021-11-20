@@ -43,7 +43,7 @@ public class SpinningLedTest {
         IButton buttonInstance = Mockito.mock(IButton.class);
         SpinningLed poc = new SpinningLed(buttonInstance);
 
-        poc.init(Color.white);
+//        poc.init(Color.white);
 
         Assert.assertTrue(poc.next());
         Assert.assertTrue(poc.next());
@@ -62,7 +62,7 @@ public class SpinningLedTest {
         IButton buttonInstance = Mockito.mock(IButton.class);
         SpinningLed poc = new SpinningLed(buttonInstance);
 
-        poc.init(Color.white);
+//        poc.init(Color.white);
 
         int counter = 0;
 
