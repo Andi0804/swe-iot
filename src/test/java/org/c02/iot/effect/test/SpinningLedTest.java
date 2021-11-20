@@ -35,7 +35,7 @@ public class SpinningLedTest {
         poc.spin(spins, Color.blue);
 
         InOrder inOrder = Mockito.inOrder(buttonInstance);
-        for (int count = 1; count <= 11 * spins; count++) {
+        for (int count = 1; count <= 11; count++) {
             inOrder.verify(buttonInstance).setLed(count, Color.blue);
         }
 
@@ -74,6 +74,19 @@ public class SpinningLedTest {
         int spins = -2;
 
         poc.spin(spins, Color.red);
+
+        verifyNoInteractions(buttonInstance);
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testColorIsNull() throws ParticleException {
+
+        IButton buttonInstance = Mockito.mock(IButton.class);
+        SpinningLed poc = new SpinningLed(buttonInstance);
+
+        int spins = 2;
+
+        poc.spin(spins, null);
 
         verifyNoInteractions(buttonInstance);
     }
