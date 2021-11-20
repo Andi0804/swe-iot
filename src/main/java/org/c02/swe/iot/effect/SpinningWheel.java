@@ -28,10 +28,10 @@ public class SpinningWheel extends AbstractEffect {
 
     @Override
     public boolean next() throws ParticleException {
-        int count = 1;
+        int count = 0;
         while(true){
-            if(count%2==0) button.setLed(new LedStatus(count%12, blue));
-            else button.setLed(new LedStatus(count%12, red));
+            if(count%2==0) button.setLed(new LedStatus((count%11)+1, red));
+            else button.setLed(new LedStatus((count%11)+1, blue));
             count++;
         }
     }
