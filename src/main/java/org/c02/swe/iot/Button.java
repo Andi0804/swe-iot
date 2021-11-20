@@ -20,14 +20,18 @@ public class Button implements IButton {
         if (position < 1 || position > 12)
             throw new IllegalArgumentException();
 
-        DecimalFormat df = new DecimalFormat("00") ;
-        df.setMinimumIntegerDigits(2);
+        if (color == null)
+            throw new IllegalArgumentException();
 
-        String formattedColor = ""+color.getRed() +color.getGreen()+color.getBlue();
+        DecimalFormat dfPos = new DecimalFormat("00") ;
+        dfPos.setMinimumIntegerDigits(2);
+
+        DecimalFormat dfColor = new DecimalFormat("000") ;
+        String formattedColor = ""+dfColor.format(color.getRed()) + dfColor.format(color.getGreen()) + dfColor.format(color.getBlue());
 
         for (int i = 1; i <= 12; i++) {
             if(i == position)
-                wi.callMethod("led", df.format(i) + formattedColor);
+                wi.callMethod("led", dfPos.format(i) + formattedColor);
         }
     }
 
@@ -36,17 +40,14 @@ public class Button implements IButton {
     }
 
     public void setLed(LedStatus status) throws ParticleException {
-        DecimalFormat df = new DecimalFormat("00") ;
-        df.setMinimumIntegerDigits(2);
-
-        String formattedColor = "" + status.getColor().getRed() + status.getColor().getGreen() + status.getColor().getBlue();
-        String formattedPos = df.format(status.getPosition());
-
-        wi.callMethod("led", formattedPos+formattedColor);
+        setLed(status.getPosition(), status.getColor());
     }
 
     public void setLeds(List<LedStatus> statuses) throws ParticleException {
+
         for (LedStatus status: statuses) {
+            if(status == null)
+                throw new IllegalArgumentException();
             setLed(status);
         }
     }
