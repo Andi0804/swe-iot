@@ -1,0 +1,10 @@
+5er Schritte
+
+Rot->Stunde
+Grün->Minute
+Blau->Sekunde
+
+bei Überlappung werden beide Farben angezeigt
+
+
+
