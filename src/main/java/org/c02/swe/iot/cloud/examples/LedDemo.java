@@ -8,7 +8,6 @@ import org.c02.swe.iot.ButtonConnection;
 import org.c02.swe.iot.cloud.api.IParticleApi;
 import org.c02.swe.iot.cloud.api.ParticleApi;
 import org.c02.swe.iot.cloud.api.ParticleException;
-import org.c02.swe.iot.effect.WhiteLedRunning;
 
 public class LedDemo {
 
@@ -16,7 +15,7 @@ public class LedDemo {
 
 	public static void main(String[] args) throws IOException, ParticleException {
 
-		/*api.callMethod("ledsOff", null); // Schaltet die LEDs aus
+		api.callMethod("ledsOff", null); // Schaltet die LEDs aus
 		// nn = Position 01-12
 		// rrr = rot
 		// ggg = grün
@@ -27,22 +26,7 @@ public class LedDemo {
 		api.callMethod("led", "06000255000"); //green
 		api.callMethod("led", "07000000255"); //blue
 		api.callMethod("led", "11000255255");
-*/
-		// api.callMethod("ledsOff", null);
 
-		Button button = new Button(api);
-
-		button.allLedsOff();
-
-		WhiteLedRunning w = new WhiteLedRunning(button);
-		for (int i = 0; i < 100; i++) {
-			w.next();
-			button.allLedsOff();
-		}
-
-//		for (int i = 1; i <= 12 ; i++) {
-//			button.setLed(i, Color.red);
-//
-//		}
+		api.callMethod("ledsOff", null);
 	}
 }

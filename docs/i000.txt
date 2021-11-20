@@ -1,0 +1,14 @@
+SPRINT PLANNING - ITERATION ZERO
+
+Sprint 1: Tasks TODO
+	1. 	Implementieren Sie die Methoden zum Setzen der Leds (setLed)
+	2. 	Implementieren Sie Abschalten der Leds (allLedsOff)
+	3. 	Schreiben Sie Für alle einen Test der ohne den Button aus kommt
+	4. 	Erweitern Sie auch die kleine Applikation die zeigt, 
+		die die LEDS gesetzt und gelöscht werden (LedDemoApp)
+	
+TEAM 1 (Leonardo, Christoph): 
+Tasks: 1, 2, 4
+
+TEAM 2 (Hannes, Andreas, Jasmin, Kevin, Matiou):
+Tasks: 3

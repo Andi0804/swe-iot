@@ -1,14 +1,39 @@
+
+
 SPRINT PLANNING - ITERATION ZERO
 
-EPIC 1: Tasks
+Sprint 1: Tasks TODO
 	1. 	Implementieren Sie die Methoden zum Setzen der Leds (setLed)
 	2. 	Implementieren Sie Abschalten der Leds (allLedsOff)
 	3. 	Schreiben Sie Für alle einen Test der ohne den Button aus kommt
 	4. 	Erweitern Sie auch die kleine Applikation die zeigt, 
 		die die LEDS gesetzt und gelöscht werden (LedDemoApp)
 	
-TEAM 1: 
-Tasks: 1(Leonardo, Christoph), 2(Leonardo, Christoph), 4(Leonardo, Christoph)
+TEAM 1 (Leonardo, Christoph): 
+Tasks: 1, 2, 4
 
-TEAM 2:
-Tasks: 3 (Hannes, Andreas, Jasmin, Kevin, Matiou)
+TEAM 2 (Hannes, Andreas, Jasmin, Kevin, Matiou):
+Tasks: 3
+
+SPRINT PLANNING - ITERATION One
+
+Tasks DONE
+
+	1. 	Implementieren Sie die Methoden zum Setzen der Leds (setLed)
+	2. 	Implementieren Sie Abschalten der Leds (allLedsOff)
+	3. 	Schreiben Sie Für alle einen Test der ohne den Button aus kommt
+	4. 	Erweitern Sie auch die kleine Applikation die zeigt, 
+		die die LEDS gesetzt und gelöscht werden (LedDemoApp)
+		
+Tasks TODO
+	1. 	Bugfixes für die TestCases
+	2.  TestCases erweitern
+	3.  SpinningLED implementieren (Interface mit den Methoden zuerst pushen)
+	4.	Test zu SpinningLED schreiben
+	5.	LEDDemoApp erweitern
+	
+TEAM 1 (Leonardo, Christoph): 
+Tasks: 1, 3, 5
+
+TEAM 2 (Hannes, Andreas, Jasmin, Kevin, Matiou):
+Tasks: 2, 4 
