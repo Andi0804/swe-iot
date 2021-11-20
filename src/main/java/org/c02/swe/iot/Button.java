@@ -9,10 +9,10 @@ import org.c02.swe.iot.cloud.api.ParticleException;
 
 public class Button implements IButton {
 
-    IParticleApi wrapperInstance;
+    IParticleApi wi;
 
     public Button(IParticleApi wrapperInstance) {
-        this.wrapperInstance = wrapperInstance;
+        this.wi = wrapperInstance;
     }
 
     public void setLed(int position, Color color) throws ParticleException {
@@ -23,21 +23,31 @@ public class Button implements IButton {
         DecimalFormat df = new DecimalFormat("00") ;
         df.setMinimumIntegerDigits(2);
 
+        String formattedColor = ""+color.getRed() +color.getGreen()+color.getBlue();
+
         for (int i = 1; i <= 12; i++) {
             if(i == position)
-                wrapperInstance.callMethod("led", df.format(i)+color.getRed()+color.getGreen()+color.getBlue());
+                wi.callMethod("led", df.format(i) + formattedColor);
         }
     }
 
     public void allLedsOff() throws ParticleException {
-        wrapperInstance.callMethod("ledsOff", null);
+        wi.callMethod("ledsOff", null);
     }
 
     public void setLed(LedStatus status) throws ParticleException {
+        DecimalFormat df = new DecimalFormat("00") ;
+        df.setMinimumIntegerDigits(2);
 
+        String formattedColor = "" + status.getColor().getRed() + status.getColor().getGreen() + status.getColor().getBlue();
+        String formattedPos = df.format(status.getPosition());
+
+        wi.callMethod("led", formattedPos+formattedColor);
     }
 
     public void setLeds(List<LedStatus> statuses) throws ParticleException {
-
+        for (LedStatus status: statuses) {
+            setLed(status);
+        }
     }
 }
