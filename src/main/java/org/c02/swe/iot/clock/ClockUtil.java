@@ -55,14 +55,10 @@ public class ClockUtil {
             colorSecond = Color.white;
         }
 
-        //  statuses.add(new LedStatus(hour, colorHour)); // Rot
-        //  statuses.add(new LedStatus(minute, colorMinute)); // Grün
-        //  statuses.add(new LedStatus(second, colorSecond)); // Blau
+        statuses.add(new LedStatus(hour, colorHour)); // Rot
+        statuses.add(new LedStatus(minute, colorMinute)); // Grün
+        statuses.add(new LedStatus(second, colorSecond)); // Blau
 
-        button.setLed(hour, colorHour);
-        button.setLed(minute, colorMinute);
-        button.setLed(second, colorSecond);
-
-        //button.setLeds(statuses);
+        button.setLeds(statuses);
     }
 }
