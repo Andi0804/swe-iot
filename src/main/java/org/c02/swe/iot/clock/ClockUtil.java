@@ -21,7 +21,7 @@ public class ClockUtil {
     }
 
     public void show(Date date) throws ParticleException {
-        button.allLedsOff();
+
         int hour = date.getHours()%12;
         int minute = date.getMinutes()/5;
         int second = date.getSeconds()/5;
@@ -33,12 +33,6 @@ public class ClockUtil {
         colorHour = Color.red;
         colorMinute = Color.green;
         colorSecond = Color.blue;
-
-        if (hour == minute && hour == second) {
-            colorHour = Color.white;
-            colorMinute = Color.white;
-            colorSecond = Color.white;
-        }
 
         if (hour == minute) {
             colorMinute = new Color(255, 255, 0);
@@ -55,10 +49,20 @@ public class ClockUtil {
             colorHour = new Color(255, 0, 255);
         }
 
-        statuses.add(new LedStatus(hour, colorHour)); // Rot
-        statuses.add(new LedStatus(minute, colorMinute)); // Grün
-        statuses.add(new LedStatus(second, colorSecond)); // Blau
+        if (hour == minute && hour == second) {
+            colorHour = Color.white;
+            colorMinute = Color.white;
+            colorSecond = Color.white;
+        }
 
-        button.setLeds(statuses);
+        //  statuses.add(new LedStatus(hour, colorHour)); // Rot
+        //  statuses.add(new LedStatus(minute, colorMinute)); // Grün
+        //  statuses.add(new LedStatus(second, colorSecond)); // Blau
+
+        button.setLed(hour, colorHour);
+        button.setLed(minute, colorMinute);
+        button.setLed(second, colorSecond);
+
+        //button.setLeds(statuses);
     }
 }
