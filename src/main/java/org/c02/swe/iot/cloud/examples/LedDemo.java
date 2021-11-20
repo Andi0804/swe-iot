@@ -8,6 +8,7 @@ import org.c02.swe.iot.ButtonConnection;
 import org.c02.swe.iot.cloud.api.IParticleApi;
 import org.c02.swe.iot.cloud.api.ParticleApi;
 import org.c02.swe.iot.cloud.api.ParticleException;
+import org.c02.swe.iot.effect.WhiteLedRunning;
 
 public class LedDemo {
 
@@ -33,9 +34,15 @@ public class LedDemo {
 
 		button.allLedsOff();
 
-		for (int i = 1; i <= 12 ; i++) {
-			button.setLed(i, Color.blue);
-
+		WhiteLedRunning w = new WhiteLedRunning(button);
+		for (int i = 0; i < 100; i++) {
+			w.next();
+			button.allLedsOff();
 		}
+
+//		for (int i = 1; i <= 12 ; i++) {
+//			button.setLed(i, Color.red);
+//
+//		}
 	}
 }
